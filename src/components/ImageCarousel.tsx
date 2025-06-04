@@ -1,8 +1,5 @@
 "use client";
 
-import * as React from "react";
-
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -12,6 +9,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const images = [
   "/products/image-product-1.jpg",
@@ -28,16 +26,14 @@ const thumbnails = [
 ];
 
 export function ImageCarousel() {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!api) {
       return;
     }
 
-    setCount(images.length);
     setCurrent(api.selectedScrollSnap() + 1);
 
     api.on("select", () => {
