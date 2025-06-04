@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Popover>
             <PopoverTrigger asChild>
-              <Button variant='ghost' className="relative cursor-pointer">
+              <Button variant='ghost' size='icon' className="relative cursor-pointer p-0 md:w-12 md:h-12">
                 <ShoppingCart className="w-6 h-6 md:w-12 md:h-12" />
                 {cartQuantity > 0 && (
                   <span className="absolute -top-1 -right-1 bg-orange-400 text-white rounded-full px-1.5 py-0.5 text-xs">
