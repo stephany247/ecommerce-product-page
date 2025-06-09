@@ -36,10 +36,10 @@ export default function Home() {
               $250.00
             </p>
           </div>
-          <div className="lg:grid lg:grid-cols-3 gap-4">
+          <div className="space-y-4 lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-4">
             <QuantityInput />
             <Button
-              className="w-full space-x-2 p-6 text-very-dark-blue text-lg font-bold col-span-2"
+              className="w-full space-x-2 p-6 text-very-dark-blue text-lg font-bold col-span-2 cursor-pointer"
               onClick={handleAddToCart}
             >
               <ShoppingCartIcon className="w-10 h-10" /> Add to cart

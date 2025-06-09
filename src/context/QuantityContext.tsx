@@ -33,7 +33,7 @@ export const QuantityProvider = ({ children }: { children: ReactNode }) => {
   const [cartQuantity, setCartQuantity] = useState(0); // Actual cart quantity
 
   const increase = () => setQuantity((quantity) => quantity + 1);
-  const decrease = () => setQuantity((quantity) => quantity - 1);
+  const decrease = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
   const reset = () => setQuantity(0);
   const resetCart = () => {
     setCartQuantity(0);
